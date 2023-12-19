@@ -1,4 +1,5 @@
-<img src="utils/PUSH_SWAP.png" alt="logo_push-swap" style="width: 100%">
+<img src="utils/ps_banner.png" alt="logo_push-swap" style="width: 100%">
+<img src="utils/ps_logo.png" alt="logo_push-swap" style="width: 100%">
 
 >Not the best, but it works
 
