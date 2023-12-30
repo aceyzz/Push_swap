@@ -134,3 +134,7 @@ void sort_turk(t_stack **a, t_stack **b);
 ### Tester
 
 - [push_swap tester](https://github.com/louisabricot/push_swap_tester) by [Louisabricot](https://github.com/louisabricot/)
+
+
+## Licence
+[Licence](./LICENSE)
