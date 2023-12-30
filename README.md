@@ -137,4 +137,4 @@ void sort_turk(t_stack **a, t_stack **b);
 
 
 ## Licence
-[Licence](./LICENSE)
+This work is published under the terms of **[42 Unlicense](./LICENSE)**.
