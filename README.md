@@ -119,6 +119,109 @@ void sort_turk(t_stack **a, t_stack **b);
 
 <img src="utils/grade.png" alt="grade" style="width: 20%">
 
+<br>
+
+---
+
+# ENGLISH VERSION 
+
+## Index
+1. [Objective](#objective)
+2. [Topic](#topic)
+3. [Operation](#operation)
+4. [Used Functions](#used-functions)
+    - [Parsing](#parsing)
+    - [Errors](#errors)
+    - [Checks](#checks)
+    - [Moves](#moves)
+    - [Algorithm](#algorithm)
+
+<br>
+
+## OBJECTIVE
+Develop a C language program called "push_swap" that takes a list of integers as a command-line argument and displays a sequence of operations that optimally sorts these integers.
+
+## TOPIC
+The primary objective of the **push_swap** project is to efficiently sort a stack of integers using a set of predefined rules while minimizing the number of operations. <br>
+The core idea of the project is to create two stacks, named "a" and "b", containing a sequence of unsorted integers initially, all stacked on "a". The goal is to sort these integers using a limited set of stack manipulation operations.
+
+# Constraints and Rules
+- Only specific operations are permitted for manipulating the stacks, such as moving elements between the stacks, rotating elements within a stack, etc.
+- The efficiency of the sort is measured based on the total number of operations performed.
+
+<br>
+
+## Operation
+
+The `push_swap` program solves the problem of sorting a stack of integers using restricted stack manipulation operations. Operations, such as `sa`, `sb`, `ss`, `pa`, `pb`, `ra`, `rb`, `rr`, `rra`, `rrb`, `rrr`, allow performing swaps, rotations, and push operations between two stacks.
+
+<br>
+
+## Used Functions
+
+### Parsing
+```
+long ft_atol(const char *s);                    // Converts a string into long.
+void add_node(t_stack **stack, int n);          // Adds a new node to the end of the stack.
+void stack_creator(t_stack **a, char **argv);   // Initializes stack 'a' by parsing the passed arguments.
+t_stack *get_cheapest(t_stack *stack);          // Identifies the minimum cost node in the stack.
+void prep_for_push(t_stack **stack, t_stack *top_node, char stack_name); // Prepares the stack for push.
+```
+
+### Errors
+```
+int error_syntax(char *str_n);              // Checks the syntax of a string.
+int error_duplicate(t_stack *a, int n);     // Checks if a particular number already exists in the stack.
+void free_stack(t_stack **stack);           // Frees the memory allocated for a stack.
+void free_errors(t_stack **a);              // Frees the memory allocated for a stack in case of an error.
+```
+
+### Checks
+```
+int stack_size(t_stack *stack);             // Returns the size of the stack.
+bool stack_is_sorted(t_stack *stack);       // Checks if the stack is sorted in ascending order.
+t_stack *find_last(t_stack *stack);         // Returns the last node of the stack.
+t_stack *find_min(t_stack *stack);          // Identifies the node containing the minimum value in the stack.
+t_stack *find_max(t_stack *stack);          // Identifies the node containing the maximum value in the stack.
+```
+
+### Moves
+```
+void sa(t_stack **a, bool print);                   // Swap on stack 'a'.
+void sb(t_stack **b, bool print);                   // Swap on stack 'b'.
+void ss(t_stack **a, t_stack **b, bool print);      // Simultaneous swap on stacks 'a' and 'b'.
+void ra(t_stack **a, bool print);                   // Rotate upwards on stack 'a'.
+void rb(t_stack **b, bool print);                   // Rotate upwards on stack 'b'.
+void rr(t_stack **a, t_stack **b, bool print);      // Simultaneous rotation on stacks 'a' and 'b'.
+void rra(t_stack **a, bool print);                  // Reverse rotation on stack 'a'.
+void rrb(t_stack **b, bool print);                  // Reverse rotation on stack 'b'.
+void rrr(t_stack **a, t_stack **b, bool print);     // Simultaneous reverse rotation on stacks 'a' and 'b'.
+void pa(t_stack **a, t_stack **b, bool print);      // Push operation from 'b' to 'a'.
+void pb(t_stack **b, t_stack **a, bool print);      // Push operation from 'a' to 'b'.
+```
+
+### Algorithm
+```
+void sort_3(t_stack **a);
+// Sorts the top three elements of stack 'a'.
+
+void rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node);
+void rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node);
+// Simultaneous rotation (or reverse) of stacks 'a' and 'b' until the cheapest node reaches its target position.
+
+void mover(t_stack **a, t_stack **b, bool side);
+// Moves necessary elements between stacks 'a' and 'b' to perform a push or pull operation.
+
+void min_on_top(t_stack **a);
+// Places the minimum node at the top of stack 'a'.
+
+void sort_turk(t_stack **a, t_stack **b);
+// Sorts stacks 'a' and 'b' with the Turkey Sort algorithm (insertion sort and stack manipulation operations).
+```
+
+<br>
+
+---
 
 ## Liens utiles
 
